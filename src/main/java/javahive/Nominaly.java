@@ -31,7 +31,7 @@ public class Nominaly {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for (Entry<Double, Integer> e : pieniadze.entrySet()) {
-			sb.append(String.format("%s z≈Ç X %s\n", e.getKey(), e.getValue()));
+			sb.append(String.format("%s z≥ x %s\n", e.getKey(), e.getValue()));
 		}
 		return sb.toString();
 	}

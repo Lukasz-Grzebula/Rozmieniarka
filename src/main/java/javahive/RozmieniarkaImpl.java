@@ -20,4 +20,6 @@ public class RozmieniarkaImpl implements Rozmieniarka {
 //		nominaly.setIlosc(2, 2);
 		return nominaly;
 	}
+	
+	
 }

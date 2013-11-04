@@ -48,7 +48,7 @@ public class RozmieniarkaTest {
 		//given
 		Rozmieniarka rozmieniarka=new RozmieniarkaImpl();
 		//when
-		Nominaly nominaly=rozmieniarka.rozmien(124, NOMINALY_PL);
+		Nominaly nominaly=rozmieniarka.rozmien(999, NOMINALY_PL);
 		//then
 		assertTrue(nominaly.getIlosc(200)==4);
 		assertTrue(nominaly.getIlosc(100)==1);
@@ -68,5 +68,15 @@ public class RozmieniarkaTest {
 		assertTrue(nominaly.getIlosc(5)==1);
 		assertTrue(nominaly.getIlosc(2)==2);
 		
+	}
+	@Test
+	public void Rozmieniarka2PowinienRozmienicPoprawnie1000() {
+		//given
+		Rozmieniarka2 rozmieniarka2=new RozmieniarkaImp2();
+		//when
+		Nominaly nominaly=rozmieniarka2.rozmien(1000, "1000");
+		//then
+		assertTrue(nominaly.getIlosc(200)==5);
+		assertTrue(nominaly.getIlosc(100)==0);
 	}
 }

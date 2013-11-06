@@ -30,17 +30,12 @@ public class RozmieniarkaTest {
 		assertTrue(nominaly.getIlosc(100)==0);
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void PowinnaWyrzucacWyjatekDlaUjemnychWartosci(){
 		int waluta=-200;
-		Rozmieniarka rozmieniarka = new RozmieniarkaImpl();
-		if(waluta<0){
-			//Assert.fail();
-			throw new IllegalArgumentException("Wartosc nie moze byc ujemna");
-		}else{
-			Nominaly nominaly=rozmieniarka.rozmien(waluta,NOMINALY_PL);
-			assertTrue(waluta>0);
-		}
+		Rozmieniarka rozmieniarka = new RozmieniarkaImpl();		
+			Nominaly nominaly=rozmieniarka.rozmien(waluta,NOMINALY_PL);	
+			Assert.fail();
 	}
 	
 	@Test
@@ -58,15 +53,11 @@ public class RozmieniarkaTest {
 		assertTrue(nominaly.getIlosc(2)==2);
 	}
 	@Test
-	public void Rozmieniarka2PowinnaPoprawnieRozmienic999(){
+	public void Rozmieniarka2PowinnaPoprawnieRozmienic800(){
 		Rozmieniarka2 roz2=new RozmieniarkaImp2();
-		Nominaly nominaly=roz2.rozmien(999, "999");
+		Nominaly nominaly=roz2.rozmien(800, "800");
 		assertTrue(nominaly.getIlosc(200)==4);
-		assertTrue(nominaly.getIlosc(100)==1);
-		assertTrue(nominaly.getIlosc(50)==1);
-		assertTrue(nominaly.getIlosc(20)==2);
-		assertTrue(nominaly.getIlosc(5)==1);
-		assertTrue(nominaly.getIlosc(2)==2);
+	
 		
 	}
 	@Test

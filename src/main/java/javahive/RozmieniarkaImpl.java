@@ -7,7 +7,9 @@ public class RozmieniarkaImpl implements Rozmieniarka {
 		Nominaly nominaly = new Nominaly();
 		
 		int l = dostepneNominaly.length;
-		
+		if(kwota<0){
+			throw new IllegalArgumentException("Wartosc nie moze byc ujemna");
+		}
 		for (int i=0; i<l; i++) {
 			double nominal = dostepneNominaly[i];
 			while (kwota >= nominal) {
@@ -22,4 +24,4 @@ public class RozmieniarkaImpl implements Rozmieniarka {
 	}
 	
 	
-}
+	}
